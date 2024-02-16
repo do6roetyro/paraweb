@@ -1,0 +1,26 @@
+@use "variables.scss";
+
+@mixin pseudo($url, $width, $height) {
+  content: "";
+  display: block;
+  background-image: url($url);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: $width;
+  height: $height;
+  flex-shrink: 0;
+}
+
+@mixin pseudoMask($url, $width, $height, $widthsvg, $heightsvg, $color) {
+  content: "";
+  display: block;
+  mask-image: url($url);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: $widthsvg $heightsvg;
+  width: $width;
+  height: $height;
+  background-color: $color;
+  flex-shrink: 0;
+}

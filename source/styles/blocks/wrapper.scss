@@ -1,0 +1,10 @@
+@use "../global/variables.scss";
+@use "../global/mixins.scss";
+
+.wrapper {
+  max-width: 1440px;
+  min-width: 320px;
+  margin: 0 auto;
+
+  padding: 0 clamp(16px, calc((59 / 1440) * 100vw), 137px);
+}

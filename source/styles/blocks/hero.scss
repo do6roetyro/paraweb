@@ -1,0 +1,17 @@
+@use "../global/variables.scss";
+@use "../global/mixins.scss";
+
+.hero {
+  background-image: linear-gradient(to left, #0050ef 5%, #5991ff 100%);
+}
+
+.hero__swiper {
+  padding-top: 90px;
+}
+
+.hero__swiper-pagination {
+  text-align: start;
+  margin-left: clamp(16px, calc((72/1440)*100vw), 137px);
+
+  transform: translateY(-48px);
+}

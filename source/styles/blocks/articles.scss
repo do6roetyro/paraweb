@@ -1,0 +1,29 @@
+@use "../global/variables.scss";
+@use "../global/mixins.scss";
+
+.articles__filter {
+  padding-top: 48px;
+  padding-bottom: 32px;
+
+  display: flex;
+  gap: 20px;
+
+  @media (max-width: 837px) {
+    flex-direction: column;
+  }
+}
+
+.articles__list {
+  padding-top: 24px;
+  padding-bottom: 80px;
+
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+}

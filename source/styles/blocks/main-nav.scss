@@ -1,0 +1,25 @@
+@use "../global/variables.scss";
+@use "../global/mixins.scss";
+
+
+
+.main-nav__wrapper {
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-nav__container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  @media (max-width: 480px) {
+    gap: 16px;
+  }
+}

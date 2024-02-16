@@ -1,0 +1,24 @@
+@use "../global/variables.scss";
+@use "../global/mixins.scss";
+
+.phone-icon {
+  font-weight: 500;
+  color: variables.$color-text-grey;
+
+  font-size: clamp(14px, 2vw, 16px);
+
+  @media (max-width: 768px) {
+    width: 22px;
+    height: 22px;
+    mask-image: url("../../images/icons/stack.svg#phone");
+    background-color: variables.$color-text-grey;
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+}
+
+.phone-icon__text {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}

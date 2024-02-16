@@ -1,0 +1,27 @@
+// global
+@use "global/fonts.scss";
+@use "global/global.scss";
+@use "global/mixins.scss";
+@use "global/page.scss";
+@use "global/variables.scss";
+@use "global/list.scss";
+@use "global/link.scss";
+
+// blocks
+@use "blocks/wrapper.scss";
+@use "blocks/main-container.scss";
+@use "blocks/main-header.scss";
+@use "blocks/main-nav.scss";
+@use "blocks/phone-icon.scss";
+@use "blocks/mail-icon.scss";
+@use "blocks/hero.scss";
+@use "blocks/swiper-slide.scss";
+@use "blocks/select-author.scss";
+@use "blocks/filter.scss";
+@use "blocks/date-range.scss";
+@use "blocks/articles.scss";
+@use "blocks/articles-item.scss";
+@use "blocks/main-footer.scss";
+@use "blocks/social.scss";
+
+

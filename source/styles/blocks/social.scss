@@ -1,0 +1,28 @@
+@use "../global/variables.scss";
+@use "../global/mixins.scss";
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.social__link {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-position: center;
+
+  &--tg {
+    background-image: url("../../images/icons/stack.svg#tg");
+  }
+  &--vk {
+    background-image: url("../../images/icons/stack.svg#vk");
+  }
+  &--tweeter {
+    background-image: url("../../images/icons/stack.svg#tweeter");
+  }
+  &--youtube {
+    background-image: url("../../images/icons/stack.svg#youtube");
+  }
+}

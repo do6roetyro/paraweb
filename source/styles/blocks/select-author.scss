@@ -1,0 +1,54 @@
+@use "../global/variables.scss";
+@use "../global/mixins.scss";
+
+.select-author {
+  display: flex;
+  align-items: center;
+
+  position: relative;
+  width: fit-content;
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+
+}
+
+.select-author__input {
+  border: none;
+  background-color: #ffffff;
+  appearance: none;
+  border-radius: 10px;
+  padding: 16px;
+  padding-left: 46px;
+  width: 335px;
+
+  font-family: variables.$font-Montserrat;
+  font-weight: 600;
+  font-size: 16px;
+  color: variables.$color-text-grey;
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+}
+
+.select-author::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  @include mixins.pseudo("../../images/icons/vector.svg", 15px, 10px);
+  right: 16px;
+  position: absolute;
+}
+
+.select-author::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  @include mixins.pseudo("../../images/icons/user.svg", 20px, 20px);
+  left: 16px;
+  position: absolute;
+}

@@ -1,0 +1,8 @@
+@use "variables.scss";
+@use "mixins.scss";
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}

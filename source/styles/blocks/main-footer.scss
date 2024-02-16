@@ -1,0 +1,71 @@
+@use "../global/variables.scss";
+@use "../global/mixins.scss";
+
+.main-footer {
+  background-color: variables.$color-bg-darkblue;
+}
+
+.main-footer__wrapper {
+  padding-top: 48px;
+  padding-bottom: 48px;
+
+  @media (max-width: variables.$screen-tablet) {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+.main-footer__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  justify-content: space-between;
+
+  &:first-child {
+    padding-bottom: 64px;
+
+    @media (max-width: variables.$screen-tablet) {
+      padding-bottom: 24px;
+      display: block;
+    }
+  }
+
+  &:last-child {
+    @media (max-width: variables.$screen-tablet) {
+      flex-direction: column-reverse;
+      gap: 20px;
+    }
+  }
+}
+
+.main-footer__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 48px;
+  font-weight: 500;
+  color: variables.$color-white;
+
+  @media (max-width: variables.$screen-tablet) {
+    display: block;
+    column-count: 2;
+    margin-top: 32px;
+  }
+
+  @media (max-width: 366px) {
+    display: block;
+    column-count: auto;
+  }
+}
+
+.main-footer__item {
+  @media (max-width: variables.$screen-tablet) {
+    padding-bottom: 20px;
+  }
+}
+
+.main-footer__copyright {
+  font-size: 14px;
+  line-height: 143%;
+  color: rgba(255, 255, 255, 0.8);
+}

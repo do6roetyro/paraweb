@@ -1,0 +1,49 @@
+@use "../global/variables.scss";
+@use "../global/mixins.scss";
+
+.date-range {
+  background-color: variables.$color-white;
+  border-radius: 10px;
+
+
+  display: flex;
+  align-items: center;
+
+  width: fit-content;
+
+  @media (max-width: 837px) {
+    width: 335px;
+  }
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+}
+
+.date-range__field {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+}
+
+.date-range__input {
+  border: none;
+  border-radius: 10px;
+  padding: 16px;
+
+  font-family: variables.$font-Montserrat;
+  font-weight: 600;
+  font-size: 16px;
+  color: variables.$color-text-grey;
+
+  width: 157px;
+
+    @media (max-width: 500px) {
+    width: 100%;
+  }
+}
+
+.date-range__separator {
+  font-weight: 600;
+}
