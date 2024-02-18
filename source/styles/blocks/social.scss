@@ -12,17 +12,26 @@
   width: 20px;
   height: 20px;
   background-position: center;
+  background-color: variables.$color-white;
 
   &--tg {
-    background-image: url("../../images/icons/stack.svg#tg");
+    mask-image: url("../../images/icons/stack.svg#tg");
   }
   &--vk {
-    background-image: url("../../images/icons/stack.svg#vk");
+   mask-image: url("../../images/icons/stack.svg#vk");
   }
   &--tweeter {
-    background-image: url("../../images/icons/stack.svg#tweeter");
+    mask-image: url("../../images/icons/stack.svg#tweeter");
   }
   &--youtube {
-    background-image: url("../../images/icons/stack.svg#youtube");
+    mask-image: url("../../images/icons/stack.svg#youtube");
   }
+
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: variables.$color-text-grey;
+    }
+  }
+
 }

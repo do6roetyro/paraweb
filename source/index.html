@@ -31,7 +31,7 @@
       sizes="16x16"
       href="./favicons/favicon_16x16.png"
     />
-    <link rel="manifest" href="./manifest.webmanifest" />
+    <!-- <link rel="manifest" href="./manifest.webmanifest" /> -->
     <link
       rel="mask-icon"
       href="./favicons/safari-pinned-tab.svg"
@@ -41,7 +41,7 @@
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
     />
-    <script defer="defer" src="scripts/index.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <title>Space</title>
@@ -85,12 +85,12 @@
         </h1>
         <section class="hero">
           <h2 class="visually-hidden">Инструменты для сохранения IT-кадров</h2>
-          <div class="hero__swiper swiper">
-            <div class="hero__swiper-wrapper swiper-wrapper">
+          <div class="hero__swiper swiper wrapper">
+            <div class="hero__swiper-wrapper swiper-wrapper ">
               <div class="hero__swiper-slide swiper-slide">
                 <div class="swiper-slide__container">
                   <p class="swiper-slide__title">
-                    Как бизнесу сохранять<br>IT-кадры на фоне кризиса
+                    Как бизнесу сохранять<br />IT-кадры на фоне кризиса
                   </p>
                   <p class="swiper-slide__description">
                     Инструменты, которые могут использовать компании для
@@ -130,76 +130,45 @@
         <section class="articles">
           <h2 class="visually-hidden">Статьи наших авторов</h2>
           <div class="articles__wrapper wrapper">
-          <div class="articles__filter filter">
-            <h3 class="visually-hidden">Фильтр статей</h3>
-            <label class="filter__select-author select-author">
-            <select
-              class="select-author__input"
-              aria-label="Выбрать автора"
-            >
-              <option class="select-author__value" value="" hidden>
-                Выбор автора
-              </option>
-              <option class="select-author__value" value="popular">
-                Иванов Иван
-              </option>
-              <option class="select-author__value" value="new">
-                Петров Пётр
-              </option>
-              <option class="select-author__value" value="discount">
-                Сергеев Сергей
-              </option>
-              <option class="select-author__value" value="discount">
-                Все авторы
-              </option>
-            </select>
-          </label>
-            <div class="filter__container date-range">
-            <label class="date-range__field "
-              ><span class="visually-hidden">Выберите диапазон дат:</span>
-              <input
-                class="date-range__input start-date"
-                type="text"
-                id="start-date"
-                name="start-date"
-                placeholder="От"
-              />
-            </label>
-            <label class="date-range__field">
-              <span class="date-range__separator">&#8211;</span>
-              <input
-                class="date-range__input end-date"
-                type="text"
-                id="end-date"
-                name="end-date"
-                placeholder="До"
-              />
-            </label>
+            <div class="articles__filter filter">
+              <h3 class="visually-hidden">Фильтр статей</h3>
+              <label class="filter__select-author select-author">
+                <select
+                  class="select-author__input"
+                  aria-label="Выбрать автора"
+                >
+                  <option class="select-author__value" value="" hidden>
+                    Выбор автора
+                  </option>
+
+                </select>
+              </label>
+              <div class="filter__container date-range">
+                <label class="date-range__field"
+                  ><span class="visually-hidden">Выберите диапазон дат:</span>
+                  <input
+                    class="date-range__input start-date"
+                    type="text"
+                    id="start-date"
+                    name="start-date"
+                    placeholder="От"
+                  />
+                </label>
+                <label class="date-range__field">
+                  <span class="date-range__separator">&#8211;</span>
+                  <input
+                    class="date-range__input end-date"
+                    type="text"
+                    id="end-date"
+                    name="end-date"
+                    placeholder="До"
+                  />
+                </label>
+              </div>
+            </div>
+            <div class="articles__list list"></div>
           </div>
-          </div>
-          <div class="articles__list list" >
-            <article class="articles__item articles-item"  >
-              <p class="articles-item__date">12 июня 2022</p>
-              <h4 class="articles-item__title">Заголовок статьи</h4>
-              <p class="articles-item__description">
-                Краткое описание статьи или ее начало. Может занимать больше
-                трех строк в высоту. В таком случае предложение заканчивается
-                многоточием...
-              </p>
-              <p class="articles-item__author">Иван Иванов</p>
-            </article>
-            <article class="articles__item articles-item" >
-              <p class="articles-item__date">12 июня 2022</p>
-              <h4 class="articles-item__title">Заголовок статьи</h4>
-              <p class="articles-item__description">
-                Краткое описание статьи или ее начало. Может занимать больше
-                трех строк в высоту. В таком случае предложение заканчивается
-                многоточием...
-              </p>
-              <p class="articles-item__author">Иван Иванов</p>
-            </article>
-          </div>
-        </div>
+          <button class="articles__button" type="button" id="showMoreButton">Показать еще</button>
         </section>
       </main>
       <footer class="main-footer">
@@ -259,5 +228,6 @@
         </div>
       </footer>
     </div>
+    <script src="scripts/index.js"></script>
   </body>
 </html>

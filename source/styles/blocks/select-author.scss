@@ -8,10 +8,11 @@
   position: relative;
   width: fit-content;
 
+
+
   @media (max-width: 500px) {
     width: 100%;
   }
-
 }
 
 .select-author__input {
@@ -23,13 +24,23 @@
   padding-left: 46px;
   width: 335px;
 
+  cursor: pointer;
+
   font-family: variables.$font-Montserrat;
   font-weight: 600;
   font-size: 16px;
   color: variables.$color-text-grey;
 
+  transition: box-shadow 0.3s ease-out;
+
   @media (max-width: 500px) {
     width: 100%;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
   }
 }
 
@@ -41,6 +52,7 @@
   @include mixins.pseudo("../../images/icons/vector.svg", 15px, 10px);
   right: 16px;
   position: absolute;
+  pointer-events: none;
 }
 
 .select-author::before {
@@ -51,4 +63,5 @@
   @include mixins.pseudo("../../images/icons/user.svg", 20px, 20px);
   left: 16px;
   position: absolute;
+  pointer-events: none;
 }

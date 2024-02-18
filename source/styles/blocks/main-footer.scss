@@ -59,13 +59,35 @@
 }
 
 .main-footer__item {
+  height: 100%;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
   @media (max-width: variables.$screen-tablet) {
     padding-bottom: 20px;
   }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  }
 }
+
 
 .main-footer__copyright {
   font-size: 14px;
   line-height: 143%;
   color: rgba(255, 255, 255, 0.8);
+}
+
+.main-footer__logo-link {
+  @media (max-width: variables.$screen-mobile) {
+    display: block;
+    width: 128px;
+    height: 32px;
+  }
 }

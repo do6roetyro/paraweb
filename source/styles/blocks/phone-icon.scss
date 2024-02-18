@@ -15,6 +15,16 @@
     mask-repeat: no-repeat;
     mask-position: center;
   }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: variables.$color-text-blue;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
 }
 
 .phone-icon__text {

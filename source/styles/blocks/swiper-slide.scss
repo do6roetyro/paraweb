@@ -34,8 +34,8 @@
 .swiper-slide__container {
   max-width: 574px;
   max-width: clamp(318px, calc((574/1440)*100vw),574px);
-  margin-left: 137px;
-  margin-left: clamp(16px, calc((72/1440)*100vw), 137px);
+  // margin-left: 137px;
+  // margin-left: clamp(16px, calc((72/1440)*100vw), 137px);
   text-wrap: balance;
 }
 
@@ -76,6 +76,18 @@
   border-radius: 10px;
 
   margin-bottom: 173px;
+
+  transition: box-shadow 0.3s ease;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
 }
 
 .swiper-pagination-bullet {
@@ -87,4 +99,10 @@
 
 .swiper-pagination-bullet-active {
   background: #ffffff;
+}
+
+.swiper-slide-prev,
+.swiper-slide-next
+ {
+  visibility: hidden;
 }

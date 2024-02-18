@@ -11,12 +11,20 @@
 
   width: fit-content;
 
+  transition: box-shadow 0.3s ease-out;
+
   @media (max-width: 837px) {
     width: 335px;
   }
 
   @media (max-width: 500px) {
     width: 100%;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
   }
 }
 

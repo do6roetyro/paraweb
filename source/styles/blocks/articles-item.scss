@@ -2,13 +2,29 @@
 @use "../global/mixins.scss";
 
 .articles-item {
-  padding: 24px;
-  flex-basis: 572px;
-  flex: 1;
+  flex-basis: clamp(358px, calc((570 / 1440) * 100vw), 572px);
+
+  // flex: 1;
+
+  transition: box-shadow 0.3s ease-out;
 
   border-radius: 20px;
 
   background-color: variables.$color-white;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  @media (max-width: 1105px) {
+    flex-basis: auto;
+  }
+}
+
+.articles-item__link {
+  padding: 24px;
 }
 
 .articles-item__date {
