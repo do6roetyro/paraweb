@@ -65,6 +65,7 @@
 
   display: flex;
   align-items: center;
+
   @media (max-width: variables.$screen-tablet) {
     padding-bottom: 20px;
   }
@@ -76,7 +77,6 @@
     }
   }
 }
-
 
 .main-footer__copyright {
   font-size: 14px;

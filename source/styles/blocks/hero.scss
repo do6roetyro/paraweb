@@ -7,23 +7,16 @@
 
 .hero__swiper {
   padding-top: 90px;
-}
 
-.hero__swiper-wrapper {
-  width: 1440px;
-  max-width: 1440px;
+  padding-left: clamp(16px, calc((137 / 1440) * 100vw), 137px);
   margin: 0 auto;
-}
-
-.hero__swiper-slide {
-  width: 1440px;
   max-width: 1440px;
-margin: 0 auto;
+  width: 100vw;
 }
 
 .hero__swiper-pagination {
   text-align: start;
-  margin-left: clamp(16px, calc((72/1440)*100vw), 137px);
+  margin-left: clamp(16px, calc((137 / 1440) * 100vw), 137px);
 
   transform: translateY(-48px);
 }

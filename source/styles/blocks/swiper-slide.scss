@@ -5,22 +5,25 @@
   background-image: url("../../images/hero@1x.webp");
   background-position: right bottom;
 
-
   position: relative;
 
   background-repeat: no-repeat;
   background-size: cover;
   height: auto;
 
+  max-width: 1440px;
+  width: auto;
+  margin: 0 auto;
+
   @media (min-resolution: 2dppx) {
     background-image: url("../../images/hero@2x.webp");
   }
 
-  @media(max-width: 1024px) {
+  @media (max-width: 1024px) {
     background-position: right -15vw bottom;
   }
 
-  @media(max-width: 700px) {
+  @media (max-width: 700px) {
     background-image: url("../../images/hero_mobile@1x.webp");
     background-position: right bottom;
     background-size: contain;
@@ -32,33 +35,25 @@
 }
 
 .swiper-slide__container {
-  max-width: 574px;
-  max-width: clamp(318px, calc((574/1440)*100vw),574px);
-  // margin-left: 137px;
-  // margin-left: clamp(16px, calc((72/1440)*100vw), 137px);
+  max-width: clamp(318px, calc((574 / 1440) * 100vw), 574px);
+
   text-wrap: balance;
 }
 
 .swiper-slide__title {
   font-weight: 600;
-  font-size: 40px;
   font-size: clamp(20px, 3vw, 40px);
   line-height: 140%;
   color: variables.$color-white;
 
-  padding-bottom: 24px;
-  padding-top: 100px;
-
-  padding-top: clamp(20px, calc((100/1440)*100vw), 100px);
-  padding-bottom: clamp(16px, calc((24/1440)*100vw), 24px);
+  padding-top: clamp(20px, calc((100 / 1440) * 100vw), 100px);
+  padding-bottom: clamp(16px, calc((24 / 1440) * 100vw), 24px);
 }
 
 .swiper-slide__description {
   color: variables.$color-white;
   line-height: 150%;
   font-size: clamp(14px, 2vw, 16px);
-
-  // max-width: clamp(318px, calc((574/1440)*100vw),574px);
 
   padding-bottom: 32px;
 }
@@ -102,7 +97,10 @@
 }
 
 .swiper-slide-prev,
-.swiper-slide-next
- {
+.swiper-slide-next {
   visibility: hidden;
+}
+
+.swiper-wrapper {
+  max-width: 1440px;
 }

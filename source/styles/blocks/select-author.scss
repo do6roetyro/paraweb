@@ -8,8 +8,6 @@
   position: relative;
   width: fit-content;
 
-
-
   @media (max-width: 500px) {
     width: 100%;
   }
@@ -38,6 +36,7 @@
   }
 
   @media (hover: hover) and (pointer: fine) {
+
     &:hover {
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }

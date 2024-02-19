@@ -5,7 +5,6 @@
   background-color: variables.$color-white;
   border-radius: 10px;
 
-
   display: flex;
   align-items: center;
 
@@ -47,7 +46,7 @@
 
   width: 157px;
 
-    @media (max-width: 500px) {
+  @media (max-width: 500px) {
     width: 100%;
   }
 }

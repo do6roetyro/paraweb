@@ -1,6 +1,5 @@
 @use "variables.scss";
 @use "mixins.scss";
-
 @import "../../../node_modules/swiper/swiper";
 @import "../../../node_modules/swiper/swiper-bundle";
 
@@ -54,6 +53,5 @@ span {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
 
 // @media (hover: hover) and (pointer: fine) {}

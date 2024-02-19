@@ -3,11 +3,9 @@ import 'swiper/css/bundle';
 
 //1
 const swiperHero = new Swiper('.hero__swiper', {
-  // autoplay: {
-  //   delay: 3000,
-  // },
-  spaceBetween: 30,
-  // effect: "fade",
+  autoplay: {
+    delay: 5000,
+  },
   loop: true,
   pagination: {
     el: '.swiper-pagination',
@@ -32,55 +30,75 @@ $(() => {
 });
 
 // Запрос карточек
-document.addEventListener('DOMContentLoaded', () => {
-  const axios = require('axios');
 
-  const config = {
-    method: 'GET',
-    url: 'https://mocki.io/v1/a5814d24-4e22-49fc-96d1-0e9ae2952afc',
-  };
+const axios = require('axios');
 
-  axios(config)
-    .then((response) => {
-      console.table(response.data.articles, ['url']);
-      const data = response.data.articles;
-      const listElement = document.querySelector('.articles__list');
-      const selectElement = document.querySelector('.select-author__input');
-      let cardsHTML = '';
-      const authors = [];
+const config = {
+  method: 'GET',
+  url: 'https://mocki.io/v1/a5814d24-4e22-49fc-96d1-0e9ae2952afc',
+};
 
-      for (let i = 0; i < data.length; i++) {
-        const item = data[i];
-        cardsHTML += createCard(item);
+axios(config)
+  .then((response) => {
+    // console.table(response.data.articles, ['url']);
+    const data = response.data.articles;
+    const listElement = document.querySelector('.articles__list');
+    const selectElement = document.querySelector('.select-author__input');
+    let cardsHTML = '';
+    const authors = [];
 
-        // Собираем уникальные имена авторов
-        if (item.author && !authors.includes(item.author)) {
-          authors.push(item.author);
-        }
+    for (let i = 0; i < data.length; i++) {
+      const item = data[i];
+      cardsHTML += createCard(item);
+
+      // Собираем уникальные имена авторов
+      if (item.author && !authors.includes(item.author)) {
+        authors.push(item.author);
       }
+    }
 
-      // Добавляем все карточки одним внедрением HTML
-      listElement.innerHTML = cardsHTML;
+    // Добавляем все карточки одним внедрением HTML
+    listElement.innerHTML = cardsHTML;
 
-      // Добавляем авторов в выпадающий список
-      authors.forEach((author) => {
-        const option = document.createElement('option');
-        option.value = author;
-        option.textContent = author;
-        selectElement.appendChild(option);
-      });
-    })
-    .catch((error) => {
-      console.log(error);
+    // Добавляем авторов в выпадающий список
+    authors.forEach((author) => {
+      const option = document.createElement('option');
+      option.value = author;
+      option.textContent = author;
+      selectElement.appendChild(option);
     });
 
-  function formatDateString(dateString) {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString(undefined, options);
-  }
+    // Добавляем обработчик событий для изменения значения выпадающего списка
+    selectElement.addEventListener('change', () => {
+      const selectedAuthor = selectElement.value;
 
-  function createCard(item) {
-    return `
+      // Фильтруем данные по выбранному автору
+      const filteredData = data.filter(
+        (item) => selectedAuthor === '' || item.author === selectedAuthor
+      );
+
+      // Формируем HTML только для отфильтрованных данных
+      let filteredCardsHTML = '';
+      for (let i = 0; i < filteredData.length; i++) {
+        const item = filteredData[i];
+        filteredCardsHTML += createCard(item);
+      }
+
+      // Обновляем список карточек с учетом фильтрации
+      listElement.innerHTML = filteredCardsHTML;
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+function formatDateString(dateString) {
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  return new Date(dateString).toLocaleDateString(undefined, options);
+}
+
+function createCard(item) {
+  return `
         <article class="articles__item articles-item">
         <a href=${item.url} class="articles-item__link link"  target="_blank">
           <p class="articles-item__date">${formatDateString(
@@ -92,17 +110,4 @@ document.addEventListener('DOMContentLoaded', () => {
           </a>
         </article>
       `;
-  }
-});
-
-// -- Меню навигации на мобилке.
-// const menu = document.querySelector(".main-nav__list");
-// const buttonMenu = document.querySelector(".main-nav__button-menu");
-// const logo = document.querySelector(".main-nav__logo-link");
-// const map = document.querySelector(".location__map");
-
-// buttonMenu.onclick = function () {
-//   menu.classList.toggle("main-nav__list--close");
-//   buttonMenu.classList.toggle("main-nav__button-menu--cross");
-//   logo.classList.toggle("main-nav__logo-link--close");
-// };
+}

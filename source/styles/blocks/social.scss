@@ -17,21 +17,22 @@
   &--tg {
     mask-image: url("../../images/icons/stack.svg#tg");
   }
+
   &--vk {
-   mask-image: url("../../images/icons/stack.svg#vk");
+    mask-image: url("../../images/icons/stack.svg#vk");
   }
+
   &--tweeter {
     mask-image: url("../../images/icons/stack.svg#tweeter");
   }
+
   &--youtube {
     mask-image: url("../../images/icons/stack.svg#youtube");
   }
-
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       background-color: variables.$color-text-grey;
     }
   }
-
 }
